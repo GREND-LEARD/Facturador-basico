@@ -7,11 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerListComponent } from './components/customer-list/customer-list.component';
 import { MatTableModule } from '@angular/material/table';
+import { ProductListComponent } from './components/product-list/product-list.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
