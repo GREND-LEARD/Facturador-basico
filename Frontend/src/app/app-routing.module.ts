@@ -8,11 +8,11 @@ const routes: Routes = [
   { path: 'customers', component: CustomerListComponent },
   { path: 'products', component: ProductListComponent },
   { path: 'invoices', component: InvoiceListComponent },
-  { path: '', redirectTo: '/customer', pathMatch: 'full' },
+  { path: '', redirectTo: '/customers', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

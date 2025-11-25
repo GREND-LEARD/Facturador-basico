@@ -9,6 +9,7 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 import { MatTableModule } from '@angular/material/table';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { InvoiceListComponent } from './components/invoice-list/invoice-list.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { InvoiceListComponent } from './components/invoice-list/invoice-list.com
     CustomerListComponent,
     ProductListComponent,
     InvoiceListComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
