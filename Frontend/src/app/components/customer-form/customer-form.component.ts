@@ -23,6 +23,7 @@ export class CustomerFormComponent implements OnInit {
       name: new FormControl('', Validators.required),
       identification: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.required),
+      address: new FormControl('', Validators.required),
     });
 
     if (this.data.customer) {
@@ -31,6 +32,7 @@ export class CustomerFormComponent implements OnInit {
         name: this.data.customer.name,
         identification: this.data.customer.identification,
         phone: this.data.customer.phone,
+        address: this.data.customer.address,
       });
     }
   }

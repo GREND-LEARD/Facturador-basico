@@ -16,7 +16,8 @@ export class CustomerListComponent implements OnInit {
     'name',
     'identification',
     'phone',
-    'actions',
+    'address',
+    'actions'
   ];
 
   constructor(
