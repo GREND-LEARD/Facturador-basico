@@ -10,7 +10,13 @@ import { MatTableModule } from '@angular/material/table';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { InvoiceListComponent } from './components/invoice-list/invoice-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
+import { ProductFormComponent } from './components/product-form/product-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -19,13 +25,20 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ProductListComponent,
     InvoiceListComponent,
     NavbarComponent,
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
