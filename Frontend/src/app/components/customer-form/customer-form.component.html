@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>{{ isEditMode ? "Edit Customer" : "Add Customer" }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="customerForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" placeholder="Customer name" />
+      <mat-error *ngIf="customerForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Identification</mat-label>
+      <input
+        matInput
+        formControlName="identification"
+        placeholder="Customer identification"
+      />
+      <mat-error
+        *ngIf="customerForm.get('identification')?.hasError('required')"
+      >
+        Identification is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="phone"
+        placeholder="Customer phone"
+      />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSave()">Save</button>
+</mat-dialog-actions>
