@@ -18,7 +18,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CustomerFormComponent } from './components/customer-form/customer-form.component';
-
+import { InvoiceItemComponent } from './components/invoice-item/invoice-item.component';
+import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { CustomerFormComponent } from './components/customer-form/customer-form.
     NavbarComponent,
     ProductFormComponent,
     CustomerFormComponent,
+    InvoiceItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +44,10 @@ import { CustomerFormComponent } from './components/customer-form/customer-form.
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
+    MatSelectModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

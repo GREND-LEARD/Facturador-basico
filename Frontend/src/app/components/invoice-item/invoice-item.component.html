@@ -1,0 +1,51 @@
+<div class="invoice-item-row">
+  <!-- Product Selector -->
+  <mat-form-field appearance="outline">
+    <mat-label>Product</mat-label>
+    <mat-select [(ngModel)]="selectedProductId" (selectionChange)="onChange()">
+      <mat-option *ngFor="let product of products" [value]="product.id">
+        {{ product.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Quantity Input -->
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity</mat-label>
+    <input
+      matInput
+      type="number"
+      [(ngModel)]="quantity"
+      (input)="onChange()"
+      min="1"
+    />
+  </mat-form-field>
+
+  <!-- Unit Price (read-only, auto-filled from product) -->
+  <mat-form-field appearance="outline">
+    <mat-label>Unit Price</mat-label>
+    <input matInput type="number" [(ngModel)]="unitPrice" readonly />
+  </mat-form-field>
+
+  <!-- IVA Selector -->
+  <mat-form-field appearance="outline">
+    <mat-label>IVA %</mat-label>
+    <mat-select [(ngModel)]="taxRate" (selectionChange)="onChange()">
+      <mat-option [value]="0">0%</mat-option>
+      <mat-option [value]="5">5%</mat-option>
+      <mat-option [value]="19">19%</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Calculated Values (read-only) -->
+  <div class="calculated-values">
+    <p><strong>Subtotal:</strong> ${{ subtotal | number : "1.2-2" }}</p>
+    <p><strong>Tax:</strong> ${{ taxAmount | number : "1.2-2" }}</p>
+    <p><strong>Total:</strong> ${{ totalLine | number : "1.2-2" }}</p>
+  </div>
+
+  <!-- Remove Button -->
+  <button mat-icon-button color="warn" (click)="onRemove()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
