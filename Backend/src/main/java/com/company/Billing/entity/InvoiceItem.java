@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import java.math.BigDecimal;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "invoice_items")
@@ -18,6 +19,7 @@ public class InvoiceItem {
 
     @ManyToOne
     @JoinColumn(name = "invoice_id", nullable = false)
+    @JsonIgnore // evita referencia circular
     private Invoice invoice;
 
     @ManyToOne
