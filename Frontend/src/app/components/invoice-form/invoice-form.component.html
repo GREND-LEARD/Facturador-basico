@@ -1,0 +1,59 @@
+<h2 mat-dialog-title>Create Invoice</h2>
+
+<mat-dialog-content>
+  <div class="invoice-header">
+    <!-- Customer Selection -->
+    <mat-form-field appearance="outline">
+      <mat-label>Customer</mat-label>
+      <mat-select [(ngModel)]="selectedCustomer">
+        <mat-option *ngFor="let customer of customers" [value]="customer.id">
+          {{ customer.name }} - {{ customer.identification }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Invoice Date -->
+    <mat-form-field appearance="outline">
+      <mat-label>Invoice Date</mat-label>
+      <input matInput type="date" [(ngModel)]="invoiceDate" />
+    </mat-form-field>
+  </div>
+
+  <!-- Invoice Items -->
+  <div class="invoice-items">
+    <h3>Items</h3>
+
+    
+    <app-invoice-item
+      *ngFor="let item of items; let i = index"
+      [products]="products" 
+      [item]="item"
+      (itemChange)="onItemChange(i, $event)"
+      (remove)="removeItem(i)"
+    >
+    </app-invoice-item>
+
+    <button mat-raised-button color="accent" (click)="addItem()">
+      <mat-icon>add</mat-icon>
+      Add Item
+    </button>
+  </div>
+
+  <!-- Totals -->
+  <div class="totals">
+    <p>
+      <strong>Total Subtotal:</strong> ${{ totalSubtotal | number : "1.2-2" }}
+    </p>
+    <p><strong>Total Taxes:</strong> ${{ totalTax | number : "1.2-2" }}</p>
+    <p class="total-final">
+      <strong>Total Invoice:</strong> ${{ totalAmount | number : "1.2-2" }}
+    </p>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="dialogRef.close()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSave()">
+    Save Invoice
+  </button>
+</mat-dialog-actions>

@@ -1,6 +1,11 @@
 <div class="container">
   <h1>Invoices</h1>
 
+  <button mat-raised-button color="primary" (click)="onAddInvoice()">
+    <mat-icon>add</mat-icon>
+    Add Invoice
+  </button>
+
   <table mat-table [dataSource]="invoices" class="mat-elevation-z8">
     <!-- ID Column -->
     <ng-container matColumnDef="id">
