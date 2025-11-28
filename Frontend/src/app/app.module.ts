@@ -22,6 +22,7 @@ import { InvoiceItemComponent } from './components/invoice-item/invoice-item.com
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { InvoiceFormComponent } from './components/invoice-form/invoice-form.component';
+import { InvoiceDetailComponent } from './components/invoice-detail/invoice-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { InvoiceFormComponent } from './components/invoice-form/invoice-form.com
     CustomerFormComponent,
     InvoiceItemComponent,
     InvoiceFormComponent,
+    InvoiceDetailComponent,
   ],
   imports: [
     BrowserModule,
